@@ -1,0 +1,161 @@
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f2;
+      color: #3c2a1e;
+      margin: 0;
+      padding: 0;
+    }
+
+ 
+
+    .section-title {
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .grooming-hero {
+      background: linear-gradient(to right, #fbe9e7, #fff3e0);
+      padding: 100px 25px;
+      text-align: center;
+    }
+
+    .grooming-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #4a2f23;
+    }
+
+    .grooming-hero p {
+      font-size: 1.2rem;
+      color: #6a4c3c;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .grooming-features {
+      background: linear-gradient(135deg, #56ccf2, #2f80ed);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: #fff7f3;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .grooming-pricing {
+      background: #fff1e6;
+      padding: 60px 0;
+    }
+
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 16px 20px;
+      text-align: center;
+      border-bottom: 1px solid #f0dbcb;
+    }
+
+    .pricing-table th {
+      background-color: #ffd4b1;
+      color: #3c2a1e;
+      font-weight: bold;
+    }
+
+    .pricing-table tr:hover {
+      background-color: #fff3e8;
+    }
+
+    .grooming-cta {
+      background: linear-gradient(to right, #ffe2cc, #ffd5b2);
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .grooming-cta h2 {
+      font-size: 2.2rem;
+      color: #3b2619;
+      margin-bottom: 25px;
+    }
+
+    .grooming-cta .btn {
+      background: #ff7b54;
+      color: #ffffff;
+      padding: 16px 36px;
+      border-radius: 40px;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .grooming-cta .btn:hover {
+      background: #68e845;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .grooming-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .grooming-cta h2 {
+        font-size: 1.6rem;
+      }
+
+      .grooming-cta .btn {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+      }
+    }

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet Grooming Services</title>
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+  <!-- External CSS (if any) -->
+  
+
+</head>
+
+<body>
+
+  <!-- Hero -->
+  <section class="grooming-hero">
+    <div class="container">
+      <h1>Professional Grooming Services</h1>
+      <p>Give your pet the pampering they deserve with our expert care.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="grooming-features">
+    <div class="container">
+      <h2 class="section-title">What's Included?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="{% static 'images/bathings.jpeg' %}" alt="Bathing">
+          <h3>Bathing</h3>
+          <p>Gentle shampoo and conditioning to keep your pet's coat soft and shiny.</p>
+        </div>
+        <div class="feature-card">
+          <img src="{% static 'images/naails.jpeg' %}" alt="Nail Trimming">
+          <h3>Nail Trimming</h3>
+          <p>Safe and painless nail trimming to keep your pet comfortable.</p>
+        </div>
+        <div class="feature-card">
+          <img src="{% static 'images/ear.jpeg' %}" alt="Ear Cleaning">
+          <h3>Ear Cleaning</h3>
+          <p>Thorough cleaning to prevent infections and ensure hygiene.</p>
+        </div>
+        <div class="feature-card">
+          <img src="{% static 'images/teeth.jpeg' %}" alt="Teeth Brushing">
+          <h3>Teeth Brushing</h3>
+          <p>Maintain fresh breath and healthy gums with regular brushing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="grooming-pricing">
+    <div class="container">
+      <h2 class="section-title">Pricing</h2>
+      <div class="pricing-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Small Pets</th>
+              <th>Large Pets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full Grooming Package</td>
+              <td>₹799</td>
+              <td>₹1199</td>
+            </tr>
+            <tr>
+              <td>Bath & Brush</td>
+              <td>₹499</td>
+              <td>₹799</td>
+            </tr>
+            <tr>
+              <td>Nail Trimming</td>
+              <td>₹199</td>
+              <td>₹299</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="grooming-cta">
+    <div class="container">
+      <h2>Ready to Pamper Your Pet?</h2>
+      {% if not user.is_authenticated %}
+        <p style="color: red;">Note: Please login for booking our services</p>
+      {% else %}
+        <a href="{% url 'services' %}" class="btn">Book Grooming Appointment</a>
+      {% endif %}
+    </div>
+  </section>
+
+</body>
+</html>
+{% endblock %}

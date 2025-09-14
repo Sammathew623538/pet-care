@@ -1,0 +1,67 @@
+/* doctor.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.doctor-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 20px; /* space between cards */
+}
+
+.doctor-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+.doctor-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.doctor-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.specialization {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive: mobileil 1 or 2 doctor veethem */
+@media (max-width: 992px) {
+    .doctor-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .doctor-list {
+        grid-template-columns: 1fr;
+    }
+}
+/* doctor.css */
+
+/* Caption styling */
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0; /* top & bottom spacing */
+    color: #2c3e50;
+}

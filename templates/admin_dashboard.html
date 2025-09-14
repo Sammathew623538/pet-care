@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/dash.css' %}">
+
+<div class="container mt-5">
+  <h2 class="dash-title text-center mb-4">Admin Dashboard</h2>
+
+  <!-- ================== Appointments ================== -->
+  <section class="dash-section">
+    <h3>Appointments</h3>
+    {% if appointments %}
+    <div class="dash-table-container">
+      <table class="dash-appointments-table">
+        <thead>
+          <tr>
+            <th>Owner</th>
+            <th>Email</th>
+            <th>Pet Type</th>
+            <th>Reason</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for appt in appointments %}
+          <tr>
+            <td>{{ appt.owner_name }}</td>
+            <td>{{ appt.Email }}</td>
+            <td>{{ appt.pet_type }}</td>
+            <td>{{ appt.reason }}</td>
+            <td>{{ appt.veterinarian }}</td>
+            <td>{{ appt.date }}</td>
+            <td>{{ appt.time }}</td>
+            <td>
+              <span class="dash-status {{ appt.status|lower }}">{{ appt.status }}</span>
+            </td>
+            <td class="dash-actions">
+              <a href="{% url 'approve_appointment' appt.id %}" class="approve">Approve</a>
+              <a href="{% url 'reject_appointment' appt.id %}" class="reject">Reject</a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="dash-no-appointments">No appointments found.</p>
+    {% endif %}
+  </section>
+
+  <!-- ================== Groomings ================== -->
+  <section class="dash-section">
+    <h3>Grooming Bookings</h3>
+    {% if groomings %}
+    <div class="dash-table-container">
+      <table class="dash-appointments-table">
+        <thead>
+          <tr>
+            <th>Owner</th>
+            <th>Pet Type</th>
+            <th>Contact</th>
+            <th>Services</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for g in groomings %}
+          <tr>
+            <td>{{ g.owner_name }}</td>
+            <td>{{ g.pet_Type }}</td>
+            <td>{{ g.phone_number }}</td>
+            <td>{{ g.services }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="dash-no-appointments">No grooming bookings yet.</p>
+    {% endif %}
+  </section>
+
+  <!-- ================== Trainings ================== -->
+  <section class="dash-section">
+    <h3>Training Bookings</h3>
+    {% if trainings %}
+    <div class="dash-table-container">
+      <table class="dash-appointments-table">
+        <thead>
+          <tr>
+            <th>Owner</th>
+            <th>Pet Type</th>
+            <th>Contact</th>
+            <th>Services</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for t in trainings %}
+          <tr>
+            <td>{{ t.owner_name }}</td>
+            <td>{{ t.pet_Type }}</td>
+            <td>{{ t.contact_number }}</td>
+            <td>{{ t.services }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="dash-no-appointments">No trainings yet.</p>
+    {% endif %}
+  </section>
+
+  <!-- ================== Walkings ================== -->
+  <section class="dash-section">
+    <h3>Walking Bookings</h3>
+    {% if walkings %}
+    <div class="dash-table-container">
+      <table class="dash-appointments-table">
+        <thead>
+          <tr>
+            <th>Owner</th>
+            <th>Pet Type</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Preferred</th>
+            <th>Exact Time</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for w in walkings %}
+          <tr>
+            <td>{{ w.owner_name }}</td>
+            <td>{{ w.pet_type }}</td>
+            <td>{{ w.contact_number }}</td>
+            <td>{{ w.Address }}</td>
+            <td>{{ w.prefered_Time }}</td>
+            <td>{{ w.time }}</td>
+            <td>{{ w.Duration }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="dash-no-appointments">No walkings yet.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

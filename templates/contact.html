@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if submitted %}
+  <div id="popup">✅ Submitted Successfully!</div>
+{% endif %}
+
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-heading fade-in">
+      <h2>Contact Us</h2>
+      <p>Have questions or want to book an appointment? Reach out to us!</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-form fade-in">
+        <form id="contact-form" method="post">
+          {% csrf_token %}
+          {{ form.name }}
+          {{ form.email }}
+          {{ form.phone_number }}
+          {{ form.subject }}
+          {{ form.message }}
+          <button type="submit">Send Message</button>
+        </form>
+        
+      </div>
+
+      <div class="contact-info fade-in">
+        <h3>Our Office</h3>
+        <p><strong>Address:</strong> Pathanamthitta, Kerala</p>
+        <p><strong>Phone:</strong> +91 7012214604</p>
+        <p><strong>Email:</strong> info@petcare.com</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<style>
+  #popup {
+      display: none;
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById("popup");
+    if (popup) {
+      popup.style.display = "block";
+      setTimeout(() => popup.style.opacity = 1, 100);
+      setTimeout(() => {
+          popup.style.opacity = 0;
+          setTimeout(() => popup.style.display = "none", 500);
+      }, 3000);
+    }
+  });
+</script>
+
+{% endblock %}

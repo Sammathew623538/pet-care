@@ -1,0 +1,59 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px; /* vertical list width */
+    margin: 50px auto;
+    text-align: center;
+}
+
+.doctor-list {
+    display: flex;
+    flex-direction: column; /* vertical list */
+    gap: 20px; /* space between cards */
+}
+
+.doctor-card {
+    background: linear-gradient(145deg, #e6ffe6, #ccffcc);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.doctor-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e9ecef;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.doctor-card:hover .doctor-img {
+    border-color: #198754;
+    transform: scale(1.05);
+}
+
+.doctor-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #343a40;
+}
+
+.specialization {
+    color: #198754;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}

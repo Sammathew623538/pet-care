@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/nadapp.css' %}">
+</head>
+
+<section class="walking-form-section">
+  <div class="container">
+    <h2>Dog Walking Booking</h2>
+    <p>Fill in your pet's details to schedule a walk.</p>
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Pet Type</label>
+        {{ form.pet_type }}
+      </div>
+
+      <div class="form-group">
+        <label>Owner Name</label>
+        {{ form.owner_name }}
+      </div>
+
+      <div class="form-group">
+        <label>Contact Number</label>
+        {{ form.contact_number }}
+      </div>
+
+      <div class="form-group">
+        <label>Address</label>
+        {{ form.Address }}
+      </div>
+
+      <div class="form-group">
+        <label>Preferred Time Slot</label>
+        {{ form.prefered_Time }}
+      </div>
+
+      <div class="form-group">
+        <label>Exact Time</label>
+        {{ form.time }}
+      </div>
+
+      <div class="form-group">
+        <label>Duration</label>
+        {{ form.Duration }}
+      </div>
+
+      <button type="submit" class="btn-submit">Book Now</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

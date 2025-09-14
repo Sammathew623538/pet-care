@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+ <meta http-equiv="refresh" content="8; url={% url 'hm' %}">
+
+<section class="confirmation-section" style="padding: 30px; font-family: 'Segoe UI', sans-serif;">
+  <div class="container" style="background: #f9f9f9; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    
+    <h2 style="color: #2E8B57; margin-bottom: 20px;">🐾 Service Confirmation</h2>
+
+    <p><strong>Pet_Type:</strong> {{ data.pet_Type}}</p>
+    <p><strong>Owner Name:</strong> {{ data.owner_name }}</p>
+    <p><strong>contact_number:</strong> {{ data.contact_number }}</p>
+    <p><strong>Selected Service:</strong> {{ data.services }}</p>
+
+    <div style="margin-top: 30px; padding: 15px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px;">
+      <p style="color: #155724;">✅ Your grooming service request has been received successfully.</p>
+      <p style="color: #155724;">📞 We will contact you shortly to confirm the schedule.</p>
+    </div>
+
+  
+
+  </div>
+</section>
+
+{% endblock %}

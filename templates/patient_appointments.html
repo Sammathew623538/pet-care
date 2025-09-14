@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/confirm.css' %}">
+<h2 class="title">My Appointments</h2>
+
+<div class="table-container">
+{% if appointments %}
+    <table class="appointments-table">
+        <thead>
+            <tr>
+                <th>Owner Name</th>
+                <th>Pet Type</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for appt in appointments %}
+            <tr>
+                <td>{{ appt.owner_name }}</td>
+                <td>{{ appt.pet_type }}</td>
+                <td>{{ appt.veterinarian }}</td>
+                <td>{{ appt.date }}</td>
+                <td>{{ appt.time }}</td>
+                <td>
+                    {% if appt.status == "Pending" %}
+                        <span class="status-pending">{{ appt.status }}</span>
+                    {% elif appt.status == "Confirmed" %}
+                        <span class="status-confirmed">{{ appt.status }}</span>
+                    {% else %}
+                        <span class="status-rejected">{{ appt.status }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p class="no-appointments">No appointments booked yet.</p>
+{% endif %}
+</div>
+{% endblock %}

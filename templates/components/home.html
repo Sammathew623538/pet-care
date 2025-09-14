@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bath"></i>
+                </div>
+           <h3><a href="{% url 'gg' %}" style="color: black; text-decoration: none;">Grooming</h3>
+
+             <p>Professional Bath & Haircuts to keep your pet clean and healthy.</p>
+
+              </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clinic-medical"></i>
+                </div>
+      <a href="{% url 'care' %}" style="text-decoration: none; color: black;">
+        <h3>Vet Care</h3>
+         </a>
+ 
+
+
+         
+                <p>24/7 Medical Support from certified veterinarians.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                   <i class="fas fa-chalkboard-teacher"></i>
+
+
+                </div>
+               <a href="{% url 'tr' %}" style="text-decoration: none; color: black;">
+        <h3>Tranning </h3>
+         
+               <p>Professional training to improve your pet’s behavior and obedience.</p>
+              </a>
+          
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                   <i class="fas fa-dog"></i>
+
+                </div>
+                    <a href="{% url 'wal' %}" style="text-decoration: none; color: black;">
+        <h3>Walking </h3>
+         
+                <p>Daily exercise services to keep your pet active.</p>
+            
+               </a>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-us">
+    <div class="container">
+        <h2 class="section-title">Why Choose PetCare?</h2>
+        <ul class="benefits-list">
+            <li>10+ Years of Experience in pet care</li>
+            <li>Certified Veterinarians and Groomers</li>
+            <li>24/7 Emergency Support</li>
+            <li>Affordable Pricing</li>
+            <li>Personalized Care for Each Pet</li>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

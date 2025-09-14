@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+<link rel="stylesheet" href="{% static 'css/tranning.css' %}">
+
+</head>
+
+<!-- Hero Section -->
+<section class="training-hero">
+  <div class="container">
+    <h1>Expert Pet Training</h1>
+    <p>Transform your pet’s behavior and boost confidence with our professional training sessions.</p>
+  </div>
+</section>
+
+<!-- What's Included -->
+<section class="training-features fade-in">
+  <div class="container">
+    <h2>What We Offer</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="{% static 'images/obj.jpeg' %}" alt="Obedience Training">
+        <h3>Obedience Training</h3>
+        <p>Master basic commands: sit, stay, down, and come.</p>
+      </div>
+      <div class="feature-card">
+        <img src="{% static 'images/bark.jpeg' %}" alt="Behavior Correction">
+        <h3>Behavior Correction</h3>
+        <p>Fix barking, jumping, aggression, and more.</p>
+      </div>
+      <div class="feature-card">
+        <img src="{% static 'images/od.jpeg' %}" alt="Potty Training">
+        <h3>Potty Training</h3>
+        <p>Housebreaking your puppy? We got it covered.</p>
+      </div>
+      <div class="feature-card">
+        <img src="{% static 'images/s.jpeg' %}" alt="Trick Training">
+        <h3>Trick Training</h3>
+        <p>Teach fun tricks like roll over, high-five, and fetch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section fade-in">
+  <div class="container">
+    <h2>What Pet Owners Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>“Thanks to PetCare's training, Max is now so obedient and friendly. Life-changing!”</p>
+        <h4>- Anjali R.</h4>
+      </div>
+      <div class="testimonial">
+        <p>“My pup used to bark at everything. After 3 sessions, he’s a new dog. Highly recommend!”</p>
+        <h4>- Rajeev K.</h4>
+      </div>
+      <div class="testimonial">
+        <p>“The trainers are super friendly and understand pets deeply. 5 stars!”</p>
+        <h4>- Meera T.</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="training-cta fade-in">
+  <div class="container">
+    <h2>Ready to Train Your Pet?</h2>
+   {% if not user.is_authenticated %}
+        <p style="color: red;">Note: Please login for booking our services</p>
+      {% else %}
+        <a href="{% url 'book' %}" class="btn">Book Session</a>
+      {% endif %}
+  </div>
+</section>
+
+
+
+{% endblock %}

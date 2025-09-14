@@ -1,0 +1,21 @@
+<h2>Pending Appointments</h2>
+<ul>
+  {% for appt in appointments %}
+    <li>
+      <strong>{{ appt.Owner_name }}</strong> - {{ appt.Pet_Type }} - 
+      {{ appt.Date|date:"M d, Y" }} {{ appt.Time|time:"H:i" }}<br>
+      Doctor: {{ appt.Veterinarian }}<br>
+      Reason: {{ appt.Reason }}<br>
+      Status: {{ appt.Status }}<br>
+      <a href="{% url 'approve_appointment' appt.id %}">Approve</a> | 
+      <a href="{% url 'reject_appointment' appt.id %}">Reject</a>
+      <a href="{% url 'pending_appointments' appt.id %}">pending</a>
+     
+       
+      
+
+    </li>
+  {% empty %}
+    <li>No pending appointments.</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="heading">Registration Form</h2>
+        <hr>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Username -->
+            <div class="form-group">
+                <label class="firstname" for="{{ form.username.id_for_label }}">Username:</label>
+                {{ form.username }}
+                <div style="color:rgb(102, 255, 0);">{{ form.username.errors }}</div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label class="mail" for="{{ form.email.id_for_label }}">Email:</label>
+                {{ form.email }}
+               <div style="color:rgb(98, 255, 0);">{{ form.email.errors }}</div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label class="pass" for="{{ form.password1.id_for_label }}">Password:</label>
+                {{ form.password1 }}
+               <div style="color:rgb(94, 255, 0);">{{ form.password1.errors }}</div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label class="pass" for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+                {{ form.password2 }}
+     <div style="color:rgb(38, 255, 0);">{{ form.password2.errors }}</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-warning sbutton">Register</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+</html>

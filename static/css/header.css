@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 80px; /* Enough space below fixed header */
+    background: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: white;
+    position: fixed;
+    top: 0;
+    width:100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 54px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4CAF50;
+}
+
+/* Button */
+.btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+/* Small danger button */
+.btn-danger {
+    background: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 35px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}/* Dropdown parent */
+
+
+ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white; /* background colour change cheyyam */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Show dropdown on hover */
+li:hover > ul.dropdown-menu {
+    display: block;
+}
+
+/* Dropdown items styling */
+ul.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+ul.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}

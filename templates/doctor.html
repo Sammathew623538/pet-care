@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/doctor.css' %}">
+
+<div class="container">
+    <h1 class="page-title">Meet Our Expert Doctors</h1>
+
+    <div class="doctor-list">
+        {% for doctor in doctors %}
+        <div class="doctor-card">
+            <img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" class="doctor-img">
+            <div class="doctor-name">{{ doctor.name }}</div>
+            <div class="specialization">{{ doctor.specialization }}</div>
+        </div>
+        {% empty %}
+        <p class="text-center">No doctors available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="title">Pending Appointments</h2>
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/appos.css' %}">
+{% endblock %}
+
+{% if appointments %}
+<div class="table-container">
+    <table class="appointments-table">
+        <thead>
+            <tr>
+                <th>Owner Name</th>
+                <th>Email</th>
+                <th>Pet Type</th>
+                <th>Reason</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for appt in appointments %}
+            <tr>
+                <td>{{ appt.owner_name }}</td>
+                <td>{{ appt.Email }}</td>
+                <td>{{ appt.pet_type }}</td>
+                <td>{{ appt.reason }}</td>
+                <td>{{ appt.date }}</td>
+                <td>{{ appt.time }}</td>
+                <td class="actions">
+                    <a href="{% url 'approve_appointment' appt.id %}" class="approve">Approve</a>
+                    <a href="{% url 'reject_appointment' appt.id %}" class="reject">Reject</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p class="no-appointments">No pending appointments.</p>
+{% endif %}
+
+{% endblock %}

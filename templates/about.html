@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<section class="about-section" id="about">
+  <div class="about-container">
+    <div class="about-image slide-in-left">
+      <img src="{% static 'images/dober.jpg' %}" alt="Happy Pet">
+    </div>
+    <div class="about-text slide-in-right">
+      <h2>We Love Your Pets Like You Do</h2>
+      <p>At PetCare, we treat every pet like our own. From grooming and vet checkups to comfortable boarding, we ensure your furry friends feel safe, healthy, and loved.</p>
+      <p>With trained professionals and a passion for animals, our services are designed to provide the best care possible — because pets are family.</p>
+      <a href="#services" class="about-btn">Explore Services</a>
+    </div>
+  </div>
+
+  <div class="about-extra fade-in">
+    <h3>Our Mission</h3>
+    <p>To provide compassionate, professional, and personalized care that improves the lives of pets and their owners.</p>
+
+    <div class="about-features">
+      <div class="feature">
+        <img src="{% static 'images/dober.jpg' %}" alt="Grooming">
+        <h4>Expert Grooming</h4>
+        <p>Tailored grooming for a clean and happy pet, using safe and pet-friendly products.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'images/dogs.jpg' %}" alt="Vet">
+        <h4>Veterinary Care</h4>
+        <p>Experienced vets ensure timely checkups and emergency care for your pets’ health.</p>
+      </div>
+      <div class="feature">
+        <img src="{% static 'images/back.jpg' %}" alt="Boarding">
+        <h4>Walking</h4>
+        <p>Comfortable spaces with 24/7 attention while you’re away — your pet’s second home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>User Profile – Settings</title>
+<style>
+  :root{
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --text:#222;
+    --muted:#6b7280;
+    --line:#e5e7eb;
+    --primary:#3b82f6;
+    --danger:#ef4444;
+    --shadow: 0 10px 25px rgba(0,0,0,.06);
+    --radius:14px;
+    --radius-sm:10px;
+    --pad:24px;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font:16px/1.5 ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    color:var(--text);
+    background:var(--bg);
+  }
+
+  /* Top bar */
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 22px;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:10;
+  }
+  .topbar .title{
+    font-weight:600;
+    font-size:18px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    border:1px solid var(--primary);
+    background:var(--primary);
+    color:#fff; padding:10px 16px;
+    border-radius:10px; cursor:pointer;
+    font-weight:600;
+    box-shadow: 0 5px 16px rgba(59,130,246,.25);
+  }
+  .btn:active{transform:translateY(1px)}
+
+  /* Page container */
+  .container{max-width:1100px; margin:24px auto; padding:0 16px}
+
+  /* Card */
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:var(--pad);
+  }
+
+  /* Header section inside card */
+  .profile-header{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:22px;
+    align-items:center;
+  }
+  .avatar{
+    width:120px; height:120px; border-radius:999px;
+    overflow:hidden; border:6px solid #fff; box-shadow:0 6px 18px rgba(0,0,0,.08);
+    background:#ddd center/cover no-repeat;
+    background-image:url('https://i.pravatar.cc/240?img=5'); /* placeholder */
+  }
+  .identity h1{
+    margin:0 0 4px; font-size:40px; font-weight:700; letter-spacing:.2px;
+  }
+  .identity .meta{
+    color:var(--muted);
+  }
+  .identity .meta a{ color:#2b6cb0; text-decoration:none }
+  .identity .meta a:hover{ text-decoration:underline }
+
+  /* Upload/Dropzone */
+  .dropzone{
+    margin-top:18px;
+    border:2px dashed #d1d5db;
+    border-radius:12px;
+    padding:26px;
+    text-align:center;
+    color:#6b7280;
+  }
+  .dropzone b{ color:#374151 }
+  .dropzone input{ display:none }
+
+  /* Section title */
+  .section-title{
+    margin:28px 0 14px;
+    font-weight:700; letter-spacing:.2px;
+  }
+
+  /* Form grid */
+  form .grid{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    row-gap:14px; column-gap:20px;
+    align-items:center;
+  }
+  label{
+    color:#374151; font-weight:600;
+  }
+  .req::after{
+    content:" *"; color:var(--danger); font-weight:800;
+  }
+  input[type="text"], input[type="email"], input[type="password"], select{
+    width:100%;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 14px;
+    font:inherit; background:#fff;
+    outline:none; transition:border-color .15s, box-shadow .15s;
+  }
+  input:focus, select:focus{
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(59,130,246,.15);
+  }
+
+  /* Responsive */
+  @media (max-width: 760px){
+    .profile-header{ grid-template-columns:80px 1fr }
+    .avatar{ width:80px;height:80px }
+    .identity h1{ font-size:28px }
+    form .grid{ grid-template-columns:1fr; }
+    label{ margin-top:10px }
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="title">👤 User: ryan</div>
+    <button class="btn" type="button">✔ Save</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+
+      <!-- Profile header -->
+      <div class="profile-header">
+        <div class="avatar" aria-label="User avatar"></div>
+        <div class="identity">
+          <h1>John Doe</h1>
+          <div class="meta">
+            <a href="mailto:ryan@example.com">ryan@example.com</a> – Administrator
+          </div>
+          <div class="meta" style="margin-top:6px;">
+            Avatar by <a href="#" aria-label="gravatar">gravatar.com</a>. Or upload your own…
+          </div>
+        </div>
+      </div>
+
+      <!-- Dropzone -->
+      <label class="dropzone" for="file">
+        Drop your files here or <b>click in this area</b>
+        <input id="file" type="file" accept="image/*">
+      </label>
+
+      <!-- Account section -->
+      <h3 class="section-title">Account</h3>
+      <form>
+        <div class="grid">
+          <label for="username">Username</label>
+          <input id="username" type="text" value="ryan" />
+
+          <label for="email" class="req">Email</label>
+          <input id="email" type="email" value="ryan@example.com" />
+
+          <label for="password">Password</label>
+          <input id="password" type="password" value="password123" />
+
+          <label for="fullname" class="req">Full name</label>
+          <input id="fullname" type="text" value="John Doe" />
+
+          <label for="title">Title</label>
+          <input id="title" type="text" value="Administrator" />
+
+          <label for="lang">Language</label>
+          <select id="lang">
+            <option selected>English</option>
+            <option>Deutsch</option>
+            <option>Français</option>
+            <option>Español</option>
+          </select>
+        </div>
+      </form>
+
+    </section>
+  </main>
+
+</body>
+</html>

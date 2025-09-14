@@ -1,0 +1,70 @@
+
+<header>
+ 
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="PetCare Logo">
+                PetCare
+            </div>
+     
+
+           <ul class="nav-links">
+    <li><a href="{% url 'hm' %}">Home</a></li>
+    
+    <ul>
+    <li>
+        <a href="#">Services</a>
+        <ul class="dropdown-menu">
+            <li><a href="{% url 'groomings' %}">Grooming</a></li>
+            <li><a href="{% url 'trainn' %}">Training</a></li>
+            <li><a href="{% url 'walkin' %}">Walking</a></li>
+        </ul>
+    </li>
+</ul>
+
+    <li><a href="{% url 'about' %}">About Us</a></li>
+    <li><a href="{% url 'cont' %}">Contact</a></li>
+    <li><a href="{% url 'doct' %}">Doctors</a></li>
+   
+
+  
+    {% if not user.is_authenticated %}
+    <a href="{% url 'Loo' %}" class="btn">login</a>
+    {% endif %}
+    
+
+  
+    {% if user.is_authenticated and not user.is_staff %}
+
+    
+          <li><a href="{% url 'status' %}">Booking Status</a></li></ul>
+        <a href="{% url 'appoint' %}" class="btn">Book Appointment</a>
+        <a href="{% url 'profile' %}" style="margin-left: 40px;">
+    <i class="fa-solid fa-circle-user" style="font-size: 20px; color: black;"></i>
+</a>
+
+<a href="{% url 'ooo' %}" style="margin-left: 40px;">
+    <i class="fa-solid fa-arrow-right-from-bracket" style="font-size: 20px; color: black;"></i>
+</a>
+
+{% endif %}
+    {% if request.user.is_superuser %}
+<div class="staff-space">
+    <a href="{% url 'dash' %}" style="text-decoration: none; color: black;">Admin Dashboard</a>
+</div>
+{% endif %}
+
+{% if request.user.is_staff %}
+<a href="{% url 'appoos' %}" class="btn">Appointments</a>
+
+    <!-- Staffinu vendi button -->
+    <a href="{% url 'ooo' %}">
+        <i class="fa-solid fa-arrow-right-from-bracket" style="font-size: 20px; color: black;"></i>
+    </a>
+    
+{% endif %}
+
+</nav> 
+</div>
+</header>

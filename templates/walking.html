@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section: Image + Text Split -->
+<section class="hero-split fade-in">
+  <div class="hero-left">
+    <h1>Daily Dog Walks, Done Right 🐾</h1>
+    <p>Let your pet explore the outdoors safely with our trained walkers. Reliable, loving, and fun!</p>
+    <a href="{% url 'nadakk' %}" class="btn-main">Schedule a Walk</a>
+  </div>
+  <div class="hero-right">
+    <img src="{% static 'images/walk.jpeg' %}" alt="Dog walking image">
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="steps-section fade-in">
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <img src="{% static 'images/time.png' %}" alt="Step 1">
+        <h3>1. Book</h3>
+        <p>Select date and time — flexible slots available.</p>
+      </div>
+      <div class="step-card">
+        <img src="{% static 'images/d.jpeg' %}" alt="Step 2">
+        <h3>2. We Walk</h3>
+        <p>Our walker arrives, picks up your pet, and takes them out.</p>
+      </div>
+      <div class="step-card">
+        <img src="{% static 'images/l.jpeg' %}" alt="Step 3">
+        <h3>3. Get Report</h3>
+        <p>Receive a detailed walk summary, photos, and more in your inbox.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-image-bg fade-in">
+  <div class="cta-overlay">
+    <h2>Let’s Take a Walk Together</h2>
+    <p>Your pet deserves more than just a quick walk — they deserve care, love, and fun!</p>
+    <a href="{% url 'nadakk' %}" class="btn-white">Book Now</a>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-variety fade-in">
+  <div class="container">
+    <h2>Why Pet Parents ❤️ Us</h2>
+    <div class="testimonial-block">
+      <p>“Every morning, our walker comes on time and our dog literally jumps with joy. So convenient!”</p>
+      <h4>- Rakesh M.</h4>
+    </div>
+    <div class="testimonial-block">
+      <p>“Loved the real-time updates and the sweet little photos they sent after every walk!”</p>
+      <h4>- Neha & Oreo</h4>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Hero Split */
+.hero-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 80px 20px;
+  gap: 20px;
+}
+
+.hero-left {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-left h1 {
+  font-size: 42px;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+}
+
+.hero-left p {
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: #555;
+}
+
+.btn-main {
+  background: #4CAF50;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-main:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.hero-right {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-right img {
+  max-width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Steps Section */
+.steps-section {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.steps-section h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.step-card {
+  background: rgba(76,175,80,0.08);
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.step-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.step-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #00796b;
+}
+
+.step-card p {
+  font-size: 16px;
+  color: #444;
+}
+
+/* CTA Section */
+.cta-image-bg {
+  background: url("{% static 'images/od.jpeg' %}") center/cover no-repeat;
+  position: relative;
+  padding: 140px 20px;
+  text-align: center;
+}
+
+.cta-overlay {
+  background: rgba(0,0,0,0.65);
+  padding: 50px 30px;
+  border-radius: 25px;
+  max-width: 700px;
+  margin: auto;
+  color: white;
+}
+
+.cta-overlay h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta-overlay p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn-white {
+  background: white;
+  color: #4CAF50;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-white:hover {
+  background: #4CAF50;
+  color: white;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* Testimonials */
+.testimonials-variety {
+  background: #222;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials-variety h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.testimonial-block {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-style: italic;
+  color: #ddd;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.testimonial-block h4 {
+  margin-top: 15px;
+  font-weight: normal;
+  color: #ccc;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeInUp 1s ease-in-out both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-split { flex-direction: column; }
+  .hero-left, .hero-right { padding: 20px; }
+  .cta-overlay { padding: 30px 20px; }
+  .steps-grid { gap: 20px; }
+  .step-card img { width: 50px; height: 50px; }
+  .hero-left h1 { font-size: 30px; }
+  .cta-overlay h2 { font-size: 28px; }
+  .testimonials-variety h2 { font-size: 28px; }
+}
+</style>
+
+{% endblock %}
