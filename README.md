@@ -65,7 +65,7 @@ PetCare/
 
 📥 Clone the repo:
 
-git clone https://github.com/your-username/petcare.git
+git clone https://github.com/Sammathew623538/Doctor-Appointment-Booking-System-.git
 cd petcare
 
 
