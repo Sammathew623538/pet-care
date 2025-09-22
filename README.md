@@ -96,15 +96,7 @@ python manage.py createsuperuser
 
 python manage.py runserver
 
-📸 Screenshots (Optional)
 
-🔐 Login Page
-
-👤 Profile Page
-
-📊 Admin Dashboard
-
-📅 Appointment Booking
 
 ✨ Future Improvements
 
