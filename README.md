@@ -115,4 +115,4 @@ python manage.py runserver
 
 👨‍💻 Author
 
-Developed with ❤️ by [Sam Mathew]
+Developed with  by Sam Mathew
